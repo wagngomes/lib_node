@@ -2,10 +2,10 @@ const express = require('express')
 const req = require('express/lib/request')
 
 const app = express()
+app.use(express.json())
 
-app.get('/', (req, res) => {
+require('./routes/routes')(app)
 
-    res.send('hello world')
-})
 
-module.exports = app;
+
+module.exports = app
